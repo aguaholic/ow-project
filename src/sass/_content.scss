@@ -1,0 +1,100 @@
+.content-container {
+    padding: 4rem 8rem;
+
+    .cards-container {
+        width: 100%;
+        padding: 2rem 0;
+        display: inline-flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+
+        :first-child {
+            border-color: $color-card-1;
+            background-color: $color-card-1;
+        }
+
+        :nth-child(2) {
+            border-color: $color-card-2;
+            background-color: $color-card-2;
+        }
+
+        :nth-child(3) {
+            border-color: $color-card-3;
+            background-color: $color-card-3;
+        }
+
+        :last-child {
+            border-color: $color-card-4;
+            background-color: $color-card-4;
+        }
+    }
+        
+    .card {
+        display: block;
+        border-style: solid;
+        padding: 2rem;
+
+        .separator {
+            h2 {
+                width: 100%; 
+                text-align: center; 
+                border-bottom: 1px solid #000; 
+                line-height: 0.1rem;
+                margin: 20px 0 20px; 
+
+                span { 
+                    padding: 0 10px; 
+                }
+            } 
+             
+            
+        }
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        color: $color-primary;
+
+        img {
+            width: 70%;
+        }
+
+        .text-content {
+            h2 {
+                font-size: $large-font;
+                font-weight: $heavy-weight;
+                text-transform: uppercase;
+            }
+
+            h3 {
+                font-size: $large-font;
+                font-weight: $light-weight;
+                text-transform: uppercase;
+            }
+
+            li {
+                font-family: $font-secondary;
+                font-size: $medium-font;
+            }
+
+            ul {
+                list-style: none;
+            }
+            
+            ul li::before {
+                // content: "\2022";
+                // color: $color-secondary;
+                // font-weight: bold;
+                // display: inline-block; 
+                // width: 1em;
+                // margin-left: -1em;
+                background: url("../img/bullet-point.png") no-repeat top left;
+                background-position: 0 5px;
+                line-height: 1.5625;
+                padding: 0 0 4px 30px;
+                margin-left: 1em;
+            }
+        }
+    }
+}

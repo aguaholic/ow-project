@@ -17,4 +17,18 @@ const cardContent = [
     } 
 ]
 
+const cardsContainer = document.querySelector('#cards-container')
+const cardTemplate = document.querySelector('#card-template')
 
+if(cardsContainer) {
+    cardContent.forEach(cardData => {
+        const card = cardTemplate.content.cloneNode(true)
+
+        card.querySelector('.title').textContent = cardData.title
+        card.querySelector('.amount').textContent = `${cardData.price}€`
+
+        cardsContainer.appendChild(card)
+    })
+}
+
+console.log('blaaaa')

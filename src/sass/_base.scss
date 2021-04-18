@@ -11,6 +11,9 @@ $color-card-2: #2aa987;
 $color-card-3: #9d669b;
 $color-card-4: #e3ac5a;
 
+$font-primary: 'Josefin Sans', sans-serif;;
+$font-secondary: 'Roboto', sans-serif;
+
 $thin-weight: 100;
 $light-weight: 300;
 $normal-weight: 400;
@@ -45,7 +48,7 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: $font-primary;
   font-weight: 400;
   line-height: 1.6;
   color: $color-grey-dark-1;

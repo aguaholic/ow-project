@@ -1,9 +1,9 @@
 $color-primary: #09254a;
 $color-secondary: #2aa987;
 
-$color-grey-light-1: #e6e6e6; // Light background
-$color-grey-dark-1: #615551; // Normal text
-$color-violet-1: #784e76; // Text 3rd line
+$color-grey-light-1: #e6e6e6; 
+$color-grey-dark-1: #615551; 
+$color-violet-1: #784e76;
 $color-white: #fff;
 
 $color-card-1: #abc9b4;
@@ -26,7 +26,6 @@ $large-font: 1.8rem;
 $super-large-font: 2.8rem;
 
 $bp-large: 78.15em; // 1250px
-$bp-medium: 61.25em; // 980px
 $bp-small: 37.5em; // 600px
 
 * {
@@ -44,7 +43,7 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 
-  @media only screen and (max-width: $bp-medium) {
+  @media only screen and (max-width: $bp-small) {
     font-size: 50%;
   }
 }
@@ -58,13 +57,13 @@ body {
 }
 
 .container {
-  width: 120rem;
-  max-height: 117rem;
-  margin: 0 auto;
   background-color: #fff;
+  width: 100%;
+  margin: 0;
 
-  @media only screen and (max-width: $bp-large) {
-    max-width: 100%;
-    margin: 0;
+  @media only screen and (min-width: $bp-large) {
+    width: 120rem;
+    max-height: 117rem;
+    margin: 0 auto;
   }
 }

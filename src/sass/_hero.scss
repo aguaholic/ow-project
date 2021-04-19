@@ -1,28 +1,47 @@
 .hero-container {
-    position: relative;
-    width: 100%;
-    height: 42.5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    
+    @media only screen and (min-width: $bp-small) {
+        position: relative;
+        width: 100%;
+        height: 42.5vh;
+        text-align: unset;
 
-    * {
-        position: absolute;
-        
-        img {
-            width: 100%;
+        * {
+            position: absolute;
         }
     }
 
+    img, picture {
+        width: 100%;
+    }
+    
     .hero-img {
         width: 100%;
+        height: 23.7em;
     }
 
     .hero-text-banner {
         color: $color-white;
         left: 6%;
         top: 15%;
+        width: 100%;
 
-        * {
-            position: static;
-            padding: .5rem;
+        @media only screen and (min-width: $bp-small) {
+            * {
+                width: 33rem;
+                position: static;
+                padding: .5rem;
+            }
+        }
+    
+        @media only screen and (max-width: $bp-small) {
+            * {
+                padding: 2rem;
+            }
         }
         
         .text-1 {
@@ -48,8 +67,17 @@
     }
 
     .hero-round-content {
-        width: 20rem;
-        right: 5%;
-        top: 30%;
+        img {
+            width: 50%;
+        } 
+
+        @media only screen and (min-width: $bp-small) {
+            img {
+                width: 20rem;
+            } 
+
+            right: 25%;
+            top: 30%;
+        }
     }
 }

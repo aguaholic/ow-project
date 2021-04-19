@@ -1,6 +1,10 @@
 .content-container {
-    padding: 4rem 8rem;
     font-family: $font-primary;
+    padding: 2rem;
+
+    @media only screen and (min-width: $bp-small) {
+        padding: 4rem 8rem;
+    }
 
     .cards-container {
         width: 100%;
@@ -59,18 +63,31 @@
                 .month {
                     vertical-align: 70%;
                 }
-            }
-            
+            }   
         }
     }
 
     .content {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
         color: $color-primary;
+        text-align: center;
+
+        @media only screen and (min-width: $bp-small) {
+            text-align: left;
+        }
 
         img {
-            width: 70%;
+            width: 100%;
+        }
+        
+        @media only screen and (min-width: $bp-small) {
+            flex-wrap: unset;
+            justify-content: space-between;
+                
+            img {
+                width: 70%;
+            }
         }
 
         .text-content {
@@ -93,6 +110,7 @@
 
             ul {
                 list-style: none;
+                text-align: left;
             }
             
             ul li::before {
@@ -102,18 +120,17 @@
                 display: inline-block; 
                 width: 1em;
                 margin-left: -1em;
-                // background: url("../img/bullet-point.png") no-repeat top left;
-                // background-position: 0 5px;
-                // line-height: 1.5625;
-                // padding: 0 0 4px 30px;
-                // margin-left: 1em;
             }
         }
 
         .buttons {
             display: inline-flex;
-            justify-content: flex-start;
+            justify-content: center;
             font-size: $small-font;
+
+            @media only screen and (min-width: $bp-small) {
+                justify-content: flex-start;
+            }
 
             :hover {
                 text-decoration: underline;

@@ -88,7 +88,7 @@
 
             li {
                 font-family: $font-secondary;
-                font-size: $medium-font;
+                font-size: $small-font;
             }
 
             ul {
@@ -107,6 +107,21 @@
                 // line-height: 1.5625;
                 // padding: 0 0 4px 30px;
                 // margin-left: 1em;
+            }
+        }
+
+        .buttons {
+            display: inline-flex;
+            justify-content: flex-start;
+            font-size: $small-font;
+
+            :hover {
+                text-decoration: underline;
+                color: $color-secondary;
+            }
+
+            * {
+                margin: 1.5rem 1.5rem 0 0;
             }
         }
     }

@@ -1,7 +1,7 @@
 .hero-container {
     position: relative;
     width: 100%;
-    height: 54vh;
+    height: 42.5vh;
 
     * {
         position: absolute;
@@ -16,7 +16,6 @@
     }
 
     .hero-text-banner {
-        //width: 200px;
         color: $color-white;
         left: 6%;
         top: 15%;
@@ -37,12 +36,14 @@
             text-transform: uppercase;
             font-weight: $heavy-weight;
             font-size: $large-font;
+            padding-bottom: 0;
         }
     
         .text-3 {
             font-family: $font-secondary;
             background-color: $color-primary;
             font-size: $small-font;
+            padding-top: 0;
         }
     }
 

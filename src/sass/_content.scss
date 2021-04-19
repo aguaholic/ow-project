@@ -1,52 +1,65 @@
 .content-container {
     padding: 4rem 8rem;
+    font-family: $font-primary;
 
     .cards-container {
         width: 100%;
-        padding: 2rem 0;
         display: inline-flex;
         justify-content: space-between;
         text-transform: uppercase;
+        color: $color-white;
+        text-align: center;
+        font-weight: $light-weight;
+        padding-bottom: 4rem;
 
-        :first-child {
-            border-color: $color-card-1;
-            background-color: $color-card-1;
-        }
-
-        :nth-child(2) {
-            border-color: $color-card-2;
-            background-color: $color-card-2;
-        }
-
-        :nth-child(3) {
-            border-color: $color-card-3;
-            background-color: $color-card-3;
-        }
-
-        :last-child {
-            border-color: $color-card-4;
-            background-color: $color-card-4;
-        }
-    }
+        .card {
+            display: block;
+            border-style: solid;
+    
+            &.card-1 {
+                border-color: $color-card-1;
+                background-color: $color-card-1;
+            }
+    
+            &.card-2 {
+                border-color: $color-card-2;
+                background-color: $color-card-2;
+            }
+    
+            &.card-3 {
+                border-color: $color-card-3;
+                background-color: $color-card-3;
+            }
+    
+            &.card-4 {
+                border-color: $color-card-4;
+                background-color: $color-card-4;
+            }
         
-    .card {
-        display: block;
-        border-style: solid;
-        padding: 2rem;
+            .title {
+                font-size: $small-font;
+                padding: .8rem 2rem .2rem;
+            }
 
-        .separator {
-            h2 {
-                width: 100%; 
-                text-align: center; 
-                border-bottom: 1px solid #000; 
-                line-height: 0.1rem;
-                margin: 20px 0 20px; 
+            .separator {
+                h2 {
+                    font-size: $tiny-font;
+                    font-weight: $light-weight;
+                    line-height: 50%;
+                } 
+            }
 
-                span { 
-                    padding: 0 10px; 
+            .price {
+                padding: 0 0 .1rem;
+
+                .amount {
+                    font-size: $super-large-font;
                 }
-            } 
-             
+
+                .month {
+                    vertical-align: 70%;
+                }
+            }
             
         }
     }
@@ -83,17 +96,17 @@
             }
             
             ul li::before {
-                // content: "\2022";
-                // color: $color-secondary;
-                // font-weight: bold;
-                // display: inline-block; 
-                // width: 1em;
-                // margin-left: -1em;
-                background: url("../img/bullet-point.png") no-repeat top left;
-                background-position: 0 5px;
-                line-height: 1.5625;
-                padding: 0 0 4px 30px;
-                margin-left: 1em;
+                content: "\2022";
+                color: $color-secondary;
+                font-weight: bold;
+                display: inline-block; 
+                width: 1em;
+                margin-left: -1em;
+                // background: url("../img/bullet-point.png") no-repeat top left;
+                // background-position: 0 5px;
+                // line-height: 1.5625;
+                // padding: 0 0 4px 30px;
+                // margin-left: 1em;
             }
         }
     }

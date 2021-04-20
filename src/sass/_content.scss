@@ -1,3 +1,56 @@
+%card {
+    display: block;
+    border-style: solid;
+    text-transform: uppercase;
+    color: $color-white;
+    text-align: center;
+    font-weight: $light-weight;
+
+    &.card-1 {
+        border-color: $color-card-1;
+        background-color: $color-card-1;
+    }
+
+    &.card-2 {
+        border-color: $color-card-2;
+        background-color: $color-card-2;
+    }
+
+    &.card-3 {
+        border-color: $color-card-3;
+        background-color: $color-card-3;
+    }
+
+    &.card-4 {
+        border-color: $color-card-4;
+        background-color: $color-card-4;
+    }
+    .title {
+        font-size: $small-font;
+        padding: .8rem 2rem .2rem;
+    }
+
+    .separator {
+        h2 {
+            font-size: $tiny-font;
+            font-weight: $light-weight;
+            line-height: 50%;
+        } 
+    }
+
+    .price {
+        padding: 0 0 .1rem;
+
+        .amount {
+            font-size: $super-large-font;
+        }
+
+        .month {
+            vertical-align: 70%;
+        }
+    }
+}
+
 .content-container {
     font-family: $font-primary;
     padding: 2rem;
@@ -6,64 +59,51 @@
         padding: 4rem 8rem;
     }
 
+    .cards-carousel {
+        width: 20rem;
+        padding-bottom: 4rem;
+        margin: 0 auto;
+
+        @media only screen and (min-width: $bp-small) {
+            display: none;
+        }  
+
+        .card {
+            @extend %card
+        }
+
+        .btns {
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem 1rem 0;
+
+            .btn {
+                outline: none;
+                border: .3rem solid $color-primary;
+                border-radius: 20rem;
+                width: 2rem;
+                height: 2rem;
+            }
+
+            .selected {
+                background-color: $color-primary;
+            }
+        }
+
+    }
+
     .cards-container {
         width: 100%;
         display: inline-flex;
         justify-content: space-between;
-        text-transform: uppercase;
-        color: $color-white;
-        text-align: center;
-        font-weight: $light-weight;
         padding-bottom: 4rem;
 
+        @media only screen and (max-width: $bp-small) {
+            display: none;
+        }
+
         .card {
-            display: block;
-            border-style: solid;
-    
-            &.card-1 {
-                border-color: $color-card-1;
-                background-color: $color-card-1;
-            }
-    
-            &.card-2 {
-                border-color: $color-card-2;
-                background-color: $color-card-2;
-            }
-    
-            &.card-3 {
-                border-color: $color-card-3;
-                background-color: $color-card-3;
-            }
-    
-            &.card-4 {
-                border-color: $color-card-4;
-                background-color: $color-card-4;
-            }
-        
-            .title {
-                font-size: $small-font;
-                padding: .8rem 2rem .2rem;
-            }
-
-            .separator {
-                h2 {
-                    font-size: $tiny-font;
-                    font-weight: $light-weight;
-                    line-height: 50%;
-                } 
-            }
-
-            .price {
-                padding: 0 0 .1rem;
-
-                .amount {
-                    font-size: $super-large-font;
-                }
-
-                .month {
-                    vertical-align: 70%;
-                }
-            }   
+            @extend %card
         }
     }
 
@@ -72,7 +112,7 @@
         flex-wrap: wrap;
         color: $color-primary;
         text-align: center;
-        
+
         @media only screen and (min-width: $bp-small) {
             text-align: left;
         }
@@ -135,6 +175,7 @@
             :hover {
                 text-decoration: underline;
                 color: $color-secondary;
+                cursor: pointer;
             }
 
             * {

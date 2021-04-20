@@ -29,17 +29,54 @@ const cardContent = [
 const cardsContainer = document.querySelector('#cards-container')
 const cardTemplate = document.querySelector('#card-template')
 
-if(cardsContainer) {
-    cardContent.forEach(cardData => {
-        const card = cardTemplate.content.cloneNode(true)
-        
-        card.querySelector('.card').classList.add(cardData.class) 
-        card.querySelector('.title').textContent = cardData.title
-        card.querySelector('.amount').textContent = `${cardData.price}€`
+function card(cardData) {
+    const card = cardTemplate.content.cloneNode(true)
+    
+    card.querySelector('.card').classList.add(cardData.class)
+    card.querySelector('.title').textContent = cardData.title
+    card.querySelector('.amount').textContent = `${cardData.price}€`
 
-        cardsContainer.appendChild(card)
-    })
+    return card
 }
+
+if(cardsContainer && cardsContainer) {
+     cardContent.forEach(cardData => {
+         cardsContainer.appendChild(card(cardData))
+     })
+}
+
+const cardsCarousel = document.querySelector('#cards-carousel')
+
+if(cardsCarousel) {
+    const carouselItem = cardsCarousel.querySelector('#carousel-item')
+
+    carouselItem.appendChild(card(cardContent[0]))
+
+    const buttons = cardsCarousel.querySelector('.btns')
+    cardContent.forEach((cardData, i) => {
+        const button = document.createElement('button')
+        button.classList.add('btn')
+        button.setAttribute('index', i)
+
+        if(i === 0) {
+            button.classList.add('selected')
+        }
+
+        buttons.appendChild(button)
+
+        button.addEventListener('click', () => {
+            buttons.querySelector('.selected').classList.remove('selected')
+            button.classList.add('selected')
+
+            carouselItem.innerHTML = ''
+            carouselItem.appendChild(card(cardContent[i]))
+        })
+    })
+
+    
+
+}
+
 
 const listContent = document.getElementById("list-content")
 

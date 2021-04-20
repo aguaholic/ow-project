@@ -40,3 +40,35 @@ if(cardsContainer) {
         cardsContainer.appendChild(card)
     })
 }
+
+const listContent = document.getElementById("list-content")
+
+const villeBtn = document.getElementById('btn-ville')
+
+const villeContent =  `
+<ul>
+    <li>Un charmant village briard bordé par la Marn</li>
+    <li>Ses vieilles pierres, son églese et son écluse</li>
+    <li>Ses infraestructures scolaires, culturelles et sportives</li>
+</ul>
+`;
+
+const trajetContent = `
+<ul>
+    <li>Gare RER/TGV de Chessy à 10 minutes par le bus ligne 24</li>
+    <li>Paris porte de Bercy à 35 minutes par l'autoroute A4</li>
+    <li>Centre commercial Val d'Europe à 8 minutes en volture</li>
+</ul>
+  `;
+
+listContent.innerHTML = villeContent
+
+villeBtn.addEventListener("click", function() {
+    listContent.innerHTML = villeContent
+});
+
+const trajetBtn = document.getElementById('btn-trajet')
+
+trajetBtn.addEventListener("click", function() {
+    listContent.innerHTML = trajetContent
+});
